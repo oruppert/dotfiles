@@ -1,0 +1,19 @@
+xterm*background: black
+xterm*foreground: white
+xterm*cursorColor: red
+xterm*font: 7x14
+xterm*metaSendsEscape: true
+emacs.reverseVideo: true
+emacs.cursorColor: red
+emacs.cursorBlink: off
+emacs.font: 7x14
+emacs.menuBar: off
+emacs.toolBar: off
+emacs.verticalScrollBars: off
+
+
+
+
+
+
+
