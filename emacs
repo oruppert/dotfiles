@@ -65,6 +65,11 @@
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
 (add-hook 'java-mode-hook 'my-c-mode-hook)
 
+(defun my-lisp-mode-hook ()
+  (setq show-trailing-whitespace 1))
+
+(add-hook 'lisp-mode-hook 'my-lisp-mode-hook)
+
 ;; * Slime
 
 ;; Currently I am using sbcl most of the time.
