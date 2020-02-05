@@ -45,6 +45,9 @@
 ;; Reload tags without prompting.
 (setq tags-revert-without-query 1)
 
+;; Always use identifier at point.
+(setq xref-prompt-for-identifier nil)
+
 ;; * Hooks
 
 (defun my-c-mode-hook ()
