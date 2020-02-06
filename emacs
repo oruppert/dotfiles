@@ -73,6 +73,12 @@
 
 (add-hook 'lisp-mode-hook 'my-lisp-mode-hook)
 
+(defun my-javascript-mode-hook ()
+  (setq js-indent-level 8)
+  (setq show-trailing-whitespace 1))
+
+(add-hook 'js-mode-hook 'my-javascript-mode-hook)
+
 ;; * Slime
 
 ;; Currently I am using sbcl most of the time.
