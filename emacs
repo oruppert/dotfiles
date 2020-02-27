@@ -47,6 +47,10 @@
 ;; Always use identifier at point.
 (setq xref-prompt-for-identifier nil)
 
+;; From emacswiki.org: group directories first
+;; Change on the fly via C-u s
+(setq dired-listing-switches "-la --group-directories-first")
+
 ;; * Hooks
 
 (defun my-c-mode-hook ()
