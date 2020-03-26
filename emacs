@@ -102,6 +102,11 @@
 ;; emacs from suspending.
 (global-set-key (kbd "C-z") 'slime-selector)
 
+;; Use slime to switch between java files.
+(def-slime-selector-method ?j
+  (slime-recently-visited-buffer 'java-mode))
+
+
 ;; * Custom
 
 (custom-set-variables
@@ -109,7 +114,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (skewer-mode slime outshine))))
+ '(package-selected-packages
+   (quote
+    (outshine skewer-mode slime gnu-elpa-keyring-update))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
