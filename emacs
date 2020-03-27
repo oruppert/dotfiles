@@ -103,7 +103,9 @@
 (global-set-key (kbd "C-z") 'slime-selector)
 
 ;; Use slime to switch between java files.
+(require 'slime)
 (def-slime-selector-method ?j
+  "most recently visited java-mode buffer."
   (slime-recently-visited-buffer 'java-mode))
 
 
