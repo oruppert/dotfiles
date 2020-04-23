@@ -53,6 +53,11 @@
 
 ;; * Hooks
 
+(add-hook 'nxml-mode-hook
+  (lambda ()
+    (setq show-trailing-whitespace 1)))
+
+
 (defun my-c-mode-hook ()
   ;; Use tabs.
   (c-set-style "linux")
