@@ -49,7 +49,7 @@
 
 ;; From emacswiki.org: group directories first
 ;; Change on the fly via C-u s
-(setq dired-listing-switches "-la --group-directories-first")
+(setq dired-listing-switches "-lav --group-directories-first")
 
 ;; * Hooks
 
