@@ -41,11 +41,11 @@
 ;; Kill (comint) buffers without asking for permission.
 (setq kill-buffer-query-functions nil)
 
+; no longer needed (using ggtags now)
 ;; Reload tags without prompting.
-(setq tags-revert-without-query 1)
-
+;(setq tags-revert-without-query 1)
 ;; Always use identifier at point.
-(setq xref-prompt-for-identifier nil)
+;(setq xref-prompt-for-identifier nil)
 
 ;; From emacswiki.org: group directories first
 ;; Change on the fly via C-u s
@@ -66,7 +66,7 @@
   (setq show-trailing-whitespace 1)
   ;; The default binding is M-Tab, which my window manager
   ;; uses for screen switching.  So use Sime key bindings.
-  (local-set-key (kbd "C-c C-i") 'complete-tag)
+  (local-set-key (kbd "C-c C-i") 'complete-symbol)
   ;; Use slime compile-file keybinding for recompile.
   ;; Set or edit the compile-command by typing
   ;; M-x compile and recompile via C-c C-k.
