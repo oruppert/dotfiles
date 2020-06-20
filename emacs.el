@@ -70,7 +70,12 @@
   ;; Use slime compile-file keybinding for recompile.
   ;; Set or edit the compile-command by typing
   ;; M-x compile and recompile via C-c C-k.
-  (local-set-key (kbd "C-c C-k") 'recompile))
+  (local-set-key (kbd "C-c C-k") 'recompile)
+  ;; enable ggtags
+  (ggtags-mode 1)
+  (define-key ggtags-navigation-map 
+    (kbd "C-c C-k") 'recompile))
+
 
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
