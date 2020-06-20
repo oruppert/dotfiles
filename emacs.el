@@ -123,7 +123,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (outshine skewer-mode slime gnu-elpa-keyring-update))))
+    (ggtags outshine skewer-mode slime gnu-elpa-keyring-update))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
