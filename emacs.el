@@ -164,6 +164,16 @@
       (outline-show-subtree)
       (outline-next-heading)))
 
+(defun set-outline-regex (regexp)
+  (interactive
+   (list
+    (read-string "outline-regexp: ")))
+  (setq outline-regexp regexp))
+
+
+
+
+
 
 (define-key outline-minor-mode-map (kbd "M-<up>") 'previous-line)
 (define-key outline-minor-mode-map (kbd "M-<down>") 'next-line)
