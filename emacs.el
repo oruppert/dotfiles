@@ -5,6 +5,8 @@
 	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
+(menu-bar-mode -1)
+
 ;; * Look and Feel
 
 ;; Note!  Everything that could be set in ~/.Xdefaults,
@@ -43,7 +45,7 @@
 
 ; no longer needed (using ggtags now)
 ;; Reload tags without prompting.
-;(setq tags-revert-without-query 1)
+(setq tags-revert-without-query 1)
 ;; Always use identifier at point.
 ;(setq xref-prompt-for-identifier nil)
 
@@ -56,6 +58,11 @@
 (add-hook 'nxml-mode-hook
   (lambda ()
     (setq show-trailing-whitespace 1)))
+
+(add-hook 'org-mode-hook
+  (lambda ()
+    (setq show-trailing-whitespace 1)))
+
 
 
 (defun my-c-mode-hook ()
@@ -72,9 +79,10 @@
   ;; M-x compile and recompile via C-c C-k.
   (local-set-key (kbd "C-c C-k") 'recompile)
   ;; enable ggtags
-  (ggtags-mode 1)
-  (define-key ggtags-navigation-map 
-    (kbd "C-c C-k") 'recompile))
+;;  (ggtags-mode 1)
+;;  (define-key ggtags-navigation-map 
+;;    (kbd "C-c C-k") 'recompile)
+)
 
 
 (add-hook 'c-mode-hook 'my-c-mode-hook)
@@ -119,6 +127,11 @@
   (slime-recently-visited-buffer 'java-mode))
 
 
+;; * Wiki
+
+;;(load "~/src/wiki/wiki.el")
+
+
 ;; * Custom
 
 (custom-set-variables
@@ -126,12 +139,39 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(browse-url-chromium-arguments (quote ("-incognito")))
  '(package-selected-packages
    (quote
-    (ggtags outshine skewer-mode slime gnu-elpa-keyring-update))))
+    (go-mode outshine skewer-mode slime gnu-elpa-keyring-update))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; outline
+
+(defun outline-left ()
+  (interactive)
+  (if (outline-on-heading-p)
+      (outline-hide-subtree)
+    (outline-previous-heading)))
+
+(defun outline-right ()
+  (interactive)
+  (if (outline-on-heading-p)
+      (outline-show-subtree)
+      (outline-next-heading)))
+
+
+(define-key outline-minor-mode-map (kbd "M-<up>") 'previous-line)
+(define-key outline-minor-mode-map (kbd "M-<down>") 'next-line)
+(define-key outline-minor-mode-map (kbd "M-<left>") 'outline-left)
+(define-key outline-minor-mode-map (kbd "M-<right>") 'outline-right)
+
+;;(let ((map outline-minor-mode-map)) 
+;;  (define-key map (kbd "M-<left>") 'outline-hide-more)
+;;  (define-key map (kbd "M-<right>") 'outline-show-more)
+;;  (define-key map (kbd "M-<up>") 'outline-previous-visible-heading)
+;;  (define-key map (kbd "M-<down>") 'outline-next-visible-heading))
