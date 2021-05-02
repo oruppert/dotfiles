@@ -175,8 +175,8 @@
 
 
 
-(define-key outline-minor-mode-map (kbd "M-<up>") 'previous-line)
-(define-key outline-minor-mode-map (kbd "M-<down>") 'next-line)
+(define-key outline-minor-mode-map (kbd "M-<up>") 'outline-previous-heading)
+(define-key outline-minor-mode-map (kbd "M-<down>") 'outline-next-heading)
 (define-key outline-minor-mode-map (kbd "M-<left>") 'outline-left)
 (define-key outline-minor-mode-map (kbd "M-<right>") 'outline-right)
 
