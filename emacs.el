@@ -172,6 +172,13 @@
 
 
 
+;;;; grepping
+
+(setq grep-use-null-device nil)
+(setq grep-command "git --no-pager grep -n -e ")
+
+
+
 
 
 
